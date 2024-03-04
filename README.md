@@ -9,7 +9,7 @@ Caurosel con Autoplay
 6. nascondiamo arrowDown quando il counter è uguale a 0.
 
 ## Es corrente
-7. 
-8. 
+7. Creare un intervallo per mostrare in loop le immagini.
+8. Saltare dall'ultima immagine alla prima.
 9. 
 
