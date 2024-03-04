@@ -1,0 +1,36 @@
+img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.arrow_up{
+   bottom: 88%;
+   left: 50%;
+   transform: translate(-50%, 0%);
+}
+
+.arrow_down{
+   bottom: 5%;
+   left: 50%;
+   transform: translate(-50%, 0%);
+}
+
+.arrow_up,
+.arrow_down{
+   width: auto;
+   background-color: rgb(107, 107, 107);
+}
+
+
+
+
+
+
+/* hover Arrow */
+.arrow_up:hover,
+.arrow_down:hover{
+   cursor: pointer;
+   transition: all 0.4s;
+   background-color: rgba(161, 161, 161, 0.875);
+}
