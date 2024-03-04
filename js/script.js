@@ -81,20 +81,26 @@ HTMLCollection[0].classList.remove('d-none');
 
 setInterval(function(){
 
-   if(counter === images.length -1){
-      HTMLCollection[counter].classList.add('d-none');
-      counter = 0;
-      HTMLCollection[counter].classList.remove('d-none');
-   }
+   isTheLast();
 
    HTMLCollection[counter].classList.add('d-none');    // nascondo l'immagine corrente
 
    counter++;
 
    HTMLCollection[counter].classList.remove('d-none');    // mostro l'immagine successiva
-   
 
 }, 2000);
 
 
 
+
+
+
+function isTheLast(){
+
+   if(counter === images.length -1){
+      HTMLCollection[counter].classList.add('d-none');
+      counter = 0;
+      HTMLCollection[counter].classList.remove('d-none');
+   }
+}
