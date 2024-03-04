@@ -32,45 +32,69 @@ HTMLCollection[0].classList.remove('d-none');
 
 
 
-// nascondo arrowDown di default
-arrowDown.classList.add('d-none');
+// // nascondo arrowDown di default
+// arrowDown.classList.add('d-none');
 
 
 
-// al click del pulsante Up...
-arrowUp.addEventListener('click', function(){
+// // al click del pulsante Up...
+// arrowUp.addEventListener('click', function(){
 
-   // mostro arrowDown
-   arrowDown.classList.remove('d-none');
+//    // mostro arrowDown
+//    arrowDown.classList.remove('d-none');
 
+
+//    HTMLCollection[counter].classList.add('d-none');    // nascondo l'immagine corrente
+//    counter++;
+//    HTMLCollection[counter].classList.remove('d-none');    // mostro l'immagine successiva
+
+
+//    // se il contatore ha raggiunto l'ultima immagine, nascondi ArrowUp
+//    if(counter === images.length - 1){
+//       arrowUp.classList.add('d-none');
+//    }
+// })
+
+
+
+// // al click del pulsante Down...
+// arrowDown.addEventListener('click', function(){
+
+//    // mostro ArrowUp
+//    arrowUp.classList.remove('d-none');
+
+
+//    HTMLCollection[counter].classList.add('d-none');    // nascondo l'immagine corrente
+//    counter--;
+//    HTMLCollection[counter].classList.remove('d-none');    // mostro l'immagine successiva
+
+
+//    // se il counter è uguale a 0 nascondi ArrowDown
+//    if(counter === 0){
+//       arrowDown.classList.add('d-none');
+//    }
+// })
+
+
+
+
+
+setInterval(function(){
+
+   if(counter === images.length -1){
+      HTMLCollection[counter].classList.add('d-none');
+      counter = 0;
+      HTMLCollection[counter].classList.remove('d-none');
+   }
 
    HTMLCollection[counter].classList.add('d-none');    // nascondo l'immagine corrente
+
    counter++;
+
    HTMLCollection[counter].classList.remove('d-none');    // mostro l'immagine successiva
+   
 
-
-   // se il contatore ha raggiunto l'ultima immagine, nascondi ArrowUp
-   if(counter === images.length - 1){
-      arrowUp.classList.add('d-none');
-   }
-})
+}, 2000);
 
 
 
-// al click del pulsante Down...
-arrowDown.addEventListener('click', function(){
-
-   // mostro ArrowUp
-   arrowUp.classList.remove('d-none');
-
-
-   HTMLCollection[counter].classList.add('d-none');    // nascondo l'immagine corrente
-   counter--;
-   HTMLCollection[counter].classList.remove('d-none');    // mostro l'immagine successiva
-
-
-   // se il counter è uguale a 0 nascondi ArrowDown
-   if(counter === 0){
-      arrowDown.classList.add('d-none');
-   }
-})
