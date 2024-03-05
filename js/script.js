@@ -30,77 +30,59 @@ HTMLCollection[0].classList.remove('d-none');
 
 
 
-
-
 // // nascondo arrowDown di default
-// arrowDown.classList.add('d-none');
+arrowDown.classList.add('d-none');
 
 
 
-// // al click del pulsante Up...
-// arrowUp.addEventListener('click', function(){
 
-//    // mostro arrowDown
-//    arrowDown.classList.remove('d-none');
+// al click del pulsante Up...
+arrowUp.addEventListener('click', next);
 
 
-//    HTMLCollection[counter].classList.add('d-none');    // nascondo l'immagine corrente
-//    counter++;
-//    HTMLCollection[counter].classList.remove('d-none');    // mostro l'immagine successiva
-
-
-//    // se il contatore ha raggiunto l'ultima immagine, nascondi ArrowUp
-//    if(counter === images.length - 1){
-//       arrowUp.classList.add('d-none');
-//    }
-// })
+// al click del pulsante Down...
+arrowDown.addEventListener('click', prev);
 
 
 
-// // al click del pulsante Down...
-// arrowDown.addEventListener('click', function(){
 
-//    // mostro ArrowUp
-//    arrowUp.classList.remove('d-none');
-
-
-//    HTMLCollection[counter].classList.add('d-none');    // nascondo l'immagine corrente
-//    counter--;
-//    HTMLCollection[counter].classList.remove('d-none');    // mostro l'immagine successiva
-
-
-//    // se il counter è uguale a 0 nascondi ArrowDown
-//    if(counter === 0){
-//       arrowDown.classList.add('d-none');
-//    }
-// })
+// creo un intervallo di 3 sec nel cambio immagine con funzione 'next'
+setInterval(next, 2000);
 
 
 
 
 
-setInterval(function(){
+function next(){
+   // mostro arrowDown
+   arrowDown.classList.remove('d-none');
 
-   isTheLast();
+   HTMLCollection[counter].classList.toggle('d-none');    // nascondo l'immagine corrente
+   counter++;
+   
+   // se il contatore ha raggiunto l'ultima immagine, nascondi ArrowUp
+   if(counter === images.length){
+      arrowUp.classList.add('d-none');
+      counter = 0;
+   }
+
+   HTMLCollection[counter].classList.toggle('d-none');    // mostro l'immagine successiva
+}
+
+
+
+
+
+function prev(){
+   // mostro ArrowUp
+   arrowUp.classList.remove('d-none');
 
    HTMLCollection[counter].classList.add('d-none');    // nascondo l'immagine corrente
-
-   counter++;
-
+   counter--;
    HTMLCollection[counter].classList.remove('d-none');    // mostro l'immagine successiva
 
-}, 2000);
-
-
-
-
-
-
-function isTheLast(){
-
-   if(counter === images.length -1){
-      HTMLCollection[counter].classList.add('d-none');
-      counter = 0;
-      HTMLCollection[counter].classList.remove('d-none');
+   // se il counter è uguale a 0 nascondi ArrowDown
+   if(counter === 0){
+      arrowDown.classList.add('d-none');
    }
 }
