@@ -47,12 +47,12 @@ arrowDown.addEventListener('click', prev);
 
 
 // creo un intervallo di 3 sec nel cambio immagine con funzione 'next'
-setInterval(next, 2000);
+setInterval(next, 3000);
 
 
 
 
-
+// funzione che mostra l'immagine successiva e controlla i pulsanti
 function next(){
    // mostro arrowDown
    arrowDown.classList.remove('d-none');
@@ -72,7 +72,7 @@ function next(){
 
 
 
-
+// funzione che mostra l'immagine precedente e controlla i pulsanti
 function prev(){
    // mostro ArrowUp
    arrowUp.classList.remove('d-none');
